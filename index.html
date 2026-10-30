@@ -329,7 +329,7 @@
             <p>Acreditamos que cada celebração é única, e a nossa missão é fornecer as peças mais encantadoras para que possa montar o cenário dos seus sonhos com total autonomia e estilo.</p>
         </div>
         <div class="sobre-img">
-            <img src="7615bbe2-8365-4eaa-9e37-ad6ad1b65a75_2.jpg" alt="Equipa Maêh Decorações">
+            <img src="7615bbe2-8365-4eaa-9e37-ad6ad1b65a75.jpg" alt="Equipa Maêh Decorações">
         </div>
     </section>
 
@@ -354,11 +354,11 @@
     <section id="acervo" class="galeria">
         <h2>Nosso Acervo</h2>
         <div class="filtros">
-            <button class="filtro-btn active" onclick="filtrar('todos')">Todos</button>
-            <button class="filtro-btn" onclick="filtrar('fundo-mar')">Fundo do Mar</button>
-            <button class="filtro-btn" onclick="filtrar('jardim')">Jardim Floral</button>
-            <button class="filtro-btn" onclick="filtrar('classico')">Clássico Vermelho</button>
-            <button class="filtro-btn" onclick="filtrar('outros')">Outros Temas</button>
+            <button class="filtro-btn active" onclick="filtrar(event, 'todos')">Todos</button>
+            <button class="filtro-btn" onclick="filtrar(event, 'fundo-mar')">Fundo do Mar</button>
+            <button class="filtro-btn" onclick="filtrar(event, 'jardim')">Jardim Floral</button>
+            <button class="filtro-btn" onclick="filtrar(event, 'classico')">Clássico Vermelho</button>
+            <button class="filtro-btn" onclick="filtrar(event, 'outros')">Outros Temas</button>
         </div>
 
         <div class="galeria-grid">
@@ -418,10 +418,13 @@
     </a>
 
     <script>
-        function filtrar(categoria) {
+        function filtrar(event, categoria) {
             const botoes = document.querySelectorAll('.filtro-btn');
             botoes.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
 
             const itens = document.querySelectorAll('.galeria-item');
             itens.forEach(item => {
