@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maêh Decorações | Pegue e Monte em Curitiba</title>
+    <title>Maêh Decor | Pegue e Monte em Curitiba</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
+
         :root {
-            --color-primary: #B39DDB; /* Lilás */
-            --color-secondary: #E6E6FA; /* Lavanda claro */
-            --color-accent: #D4AF37; /* Dourado */
-            --color-text: #333333;
+            --color-primary: #A385C2; /* Lilás moderno da logo */
+            --color-secondary: #F4EFF8; /* Lilás bem claro para fundo */
+            --color-accent: #7A5B99; /* Tom mais escuro para destaque */
+            --color-text: #2C3E50; /* Cinza escuro para contraste limpo */
             --color-light: #FFFFFF;
             --color-bg: #FAFAFA;
         }
@@ -26,31 +27,34 @@
             color: var(--color-text);
             background-color: var(--color-bg);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             color: var(--color-primary);
+            letter-spacing: -0.5px;
         }
 
         /* Navbar */
         header {
             background-color: var(--color-light);
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 600;
             color: var(--color-primary);
             text-decoration: none;
+            font-family: 'Playfair Display', serif; 
         }
 
         nav ul {
@@ -62,58 +66,66 @@
         nav a {
             text-decoration: none;
             color: var(--color-text);
-            font-weight: 600;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--color-accent);
+            color: var(--color-primary);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-light) 100%);
-            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg) 100%);
+            padding: 120px 5%;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             color: var(--color-primary);
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 40px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            color: #555;
         }
 
         .btn {
             background-color: var(--color-primary);
             color: var(--color-light);
-            padding: 15px 30px;
+            padding: 15px 35px;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 8px; 
             font-weight: 600;
-            transition: background-color 0.3s, transform 0.3s;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(163, 133, 194, 0.2);
         }
 
         .btn:hover {
             background-color: var(--color-accent);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(163, 133, 194, 0.3);
         }
 
         /* Sobre a Empresa */
         .sobre {
-            padding: 80px 5%;
+            padding: 100px 5%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 50px;
+            gap: 60px;
             background-color: var(--color-light);
         }
 
@@ -126,8 +138,7 @@
             width: 100%;
             max-width: 350px;
             border-radius: 50%;
-            border: 5px solid var(--color-secondary);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .sobre-text {
@@ -135,133 +146,145 @@
         }
 
         .sobre-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
         }
 
         .sobre-text p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: #555;
         }
 
         /* Serviços */
         .servicos {
-            padding: 80px 5%;
+            padding: 100px 5%;
             text-align: center;
             background-color: var(--color-secondary);
         }
 
         .servicos h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 50px;
         }
 
         .servicos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
 
         .servico-card {
             background-color: var(--color-light);
-            padding: 40px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            padding: 50px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .servico-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
         }
 
         .servico-card h3 {
-            margin-bottom: 15px;
-            color: var(--color-accent);
+            margin-bottom: 20px;
+            color: var(--color-primary);
+            font-size: 1.5rem;
+        }
+
+        .servico-card p {
+            color: #666;
+            font-size: 0.95rem;
         }
 
         /* Galeria / Acervo */
         .galeria {
-            padding: 80px 5%;
+            padding: 100px 5%;
             text-align: center;
+            background-color: var(--color-bg);
         }
 
         .galeria h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
         }
 
         .filtros {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .filtro-btn {
-            background: none;
-            border: 2px solid var(--color-primary);
+            background: transparent;
+            border: 1px solid var(--color-primary);
             color: var(--color-primary);
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 12px 25px;
+            border-radius: 30px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
+            font-size: 0.9rem;
             font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .filtro-btn.active, .filtro-btn:hover {
             background-color: var(--color-primary);
             color: var(--color-light);
+            box-shadow: 0 4px 15px rgba(163, 133, 194, 0.2);
         }
 
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
         }
 
         .galeria-item {
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             display: none;
         }
 
         .galeria-item.show {
             display: block;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.6s ease forwards;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .galeria-item img, .galeria-item video {
             width: 100%;
-            height: 400px;
+            height: 450px;
             object-fit: cover;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
 
         .galeria-item:hover img, .galeria-item:hover video {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background-color: var(--color-primary);
+            background-color: var(--color-text); 
             color: var(--color-light);
             text-align: center;
-            padding: 30px 5%;
+            padding: 40px 5%;
         }
 
         footer p {
             margin-bottom: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         /* Botão Flutuante WhatsApp */
@@ -276,28 +299,37 @@
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             z-index: 100;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
         }
 
         @media (max-width: 768px) {
             .sobre {
                 flex-direction: column;
+                gap: 40px;
+                padding: 60px 5%;
             }
             nav ul {
                 display: none;
             }
+            .hero {
+                padding: 80px 5%;
+            }
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+            .servicos, .galeria {
+                padding: 60px 5%;
             }
         }
     </style>
@@ -305,7 +337,7 @@
 <body>
 
     <header>
-        <a href="#" class="logo">Maêh Decorações</a>
+        <a href="#" class="logo">Maêh Decor</a>
         <nav>
             <ul>
                 <li><a href="#sobre">A Empresa</a></li>
@@ -323,13 +355,13 @@
 
     <section id="sobre" class="sobre">
         <div class="sobre-text">
-            <h2>A Essência da Maêh Decorações</h2>
-            <p>A Maêh Decorações nasceu da paixão por celebrar a vida e tornar cada momento especial verdadeiramente memorável.</p>
+            <h2>A Essência da Maêh Decor</h2>
+            <p>A Maêh Decor nasceu da paixão por celebrar a vida e tornar cada momento especial verdadeiramente memorável.</p>
             <p>A nossa especialidade é o serviço <strong>Pegue e Monte</strong>, desenhado para levar beleza, qualidade e facilidade até si. Localizados no Bairro Alto, em Curitiba, planeamos com dedicação cada detalhe e oferecemos um acervo cuidadosamente selecionado para que a sua festa seja simplesmente perfeita.</p>
             <p>Acreditamos que cada celebração é única, e a nossa missão é fornecer as peças mais encantadoras para que possa montar o cenário dos seus sonhos com total autonomia e estilo.</p>
         </div>
         <div class="sobre-img">
-            <img src="7615bbe2-8365-4eaa-9e37-ad6ad1b65a75.jpg" alt="Equipa Maêh Decorações">
+            <img src="KIM.jpg" alt="Kimberly - Maêh Decor" style="border-radius: 50%; max-width: 350px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
         </div>
     </section>
 
@@ -406,7 +438,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Maêh Decorações. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Maêh Decor. Todos os direitos reservados.</p>
         <p>Bairro Alto - Curitiba, PR</p>
     </footer>
 
